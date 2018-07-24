@@ -1,0 +1,132 @@
+@charset "utf-8";
+* {
+    margin:0;
+    padding:0;
+    outline: none;
+}
+
+.title{
+ font-size: 36px;
+ padding-top: 10px;
+ text-align: center;
+}
+.menu{
+ list-style: none;
+ position: absolute;
+ top: 10px;
+ right: 100px;
+}
+
+
+html {
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color:#333;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1em;
+    line-height:  135%;
+    float:left;
+}
+
+a {
+    color: #384434;
+}
+
+a:hover{
+    color:#efdea0;
+}
+a,a:hover{
+    text-decoration: none;
+    transition:  all.6s ease;
+}
+
+.clear{
+    clear:both;
+}
+
+
+/*стили для шапки*/
+
+header{
+    width: 98%;
+    float: left;
+    padding:1%;
+    background-color: #fafafa;
+    border-bottom: 2px solid silver;
+}
+
+header #logo{
+    width: 40%;
+    float: left;
+    font-size: 2em;
+    color: #939393;
+}
+header #logo span{
+    color: #ee3366;
+}
+header #menuHead{
+    width: 24%;
+    float:left;
+}
+
+header #menuHead div{
+    float :left;
+    margin-right: 3%;
+    
+}
+header #regAuth{
+    width: 60%;
+    float: left;
+    text-align: right;
+}
+/*стиль для заголовка*/
+
+h1{
+    font-size: 2em;
+    text-align:  center;
+    margin: 5px;
+    color:#333
+}
+
+h2{
+    font-size: 1em;
+    text-align:  center;
+    margin: 5px;
+    color:#333
+}
+
+/* стиль для списка проектов */
+.listProject {
+list-style: none;
+padding: 0;
+}
+.listProject ol{
+    margin-top: 10px;
+   
+}
+.listProject li {
+
+padding: 5px 20px;
+margin-bottom: 7px;
+border-radius: 5px;
+border-left: 10px solid #f05d22; 
+box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+     -2px -2px 5px 0 rgba(0,0,0,.1),
+    2px 2px 5px 0 rgba(0,0,0,.1),
+    -2px 2px 5px 0 rgba(0,0,0,.1);
+font-size: 20px;
+letter-spacing: 2px;
+transition: 0.3s all linear;
+margin-left: 30%;
+margin-right: 30%;
+
+}
+.listProject li:nth-child(even){border-color: #8bc63e;}
+.listProject li:nth-child(odd){border-color: #fcba30;}
+.listProject li:hover {border-left: 10px solid transparent;}
+.listProject li:nth-child(even):hover {border-right: 10px solid #f05d22;}
+.listProject li:nth-child(odd):hover {border-right: 10px solid #8bc63e;}
