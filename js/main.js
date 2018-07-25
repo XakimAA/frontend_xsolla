@@ -1,23 +1,22 @@
-
-
+let setOfProject = new Set();
+let mapPaySystem = new Map();
+var arrayPlace = new Array();
+var setSystem = new Set(); 
+var sortMapPaySystem = new Map();
 function main()
 {
-    let setOfProject = new Set();
-    let mapPaySystem = new Map();
-    var arrayPlace = new Array();
-    var setSystem = new Set(); 
-    projectTable(setOfProject, mapPaySystem);
+    projectTable();
 
-    prize(mapPaySystem,arrayPlace,setSystem)
+    prize()
  /*   for(i in arrayPlace)
         console.log(arrayPlace[i]);
-    for(item of mapPaySystem);*/
-        console.log(item[0],item[1])
-    createTable(mapPaySystem,arrayPlace);
+    for(item of mapPaySystem);
+        console.log(item[0],item[1])*/
+    createTable();
 }
 
   
-function projectTable(setOfProject,mapPaySystem)
+function projectTable()
 {
    
     var n = 0;
@@ -46,10 +45,10 @@ function compareNumeric(a, b) {
     return b - a;
 }
 
-function prize(mapPaySystem,arrayPlace,setSystem) //array объявить внутри, set удалить
+function prize() //array объявить внутри, set удалить
 {
     var unique = new Set();
-    var sortMapPaySystem = new Map();
+
     var n = 0;
     for(item of mapPaySystem){
         unique.add(item[1]);
@@ -71,27 +70,27 @@ function prize(mapPaySystem,arrayPlace,setSystem) //array объявить вн�
     }
 }
 
-function createTable(mapPaySystem,arrayPlace)
+function createTable()
 {
     var i = 0;
     var n=1;
     $(".tablePayment").append('<tr><td>'+n+'</td><td id="value"></td></tr>');
     
-    for(item of mapPaySystem)
+    for(item of sortMapPaySystem)
     {
-       // console.log(n,item[1],mapPaySystem.get(item[1]),arrayPlace[n-1]);
-       // console.log(item[0],mapPaySystem.get(item[0]),arrayPlace[n-1])
-        if (mapPaySystem.get(item[0])==arrayPlace[n-1])
+
+        console.log(item[0],sortMapPaySystem.get(item[0]),arrayPlace[n-1])
+        if (sortMapPaySystem.get(item[0])==arrayPlace[n-1])
         {
             // тут должна быть какая-то проверка
-            console.log(item[0],arrayPlace[n-1],mapPaySystem.get(item[0])==arrayPlace[n-1])
+            console.log(item[0],arrayPlace[n-1],sortMapPaySystem.get(item[0])==arrayPlace[n-1])
             $("#value").append("<br>"+ item[0]);
         }
         else
         {
             n++;
             $("#value").removeAttr("id");
-            $(".tablePayment").append('<tr><td>'+n+'</td><td id="value"></td></tr>');
+            $(".tablePayment").append('<tr><td>'+n+'</td><td id="value">'+ item[0]+'</td></tr>');
 
         }
         
