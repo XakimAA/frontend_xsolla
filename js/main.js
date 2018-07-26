@@ -3,15 +3,34 @@ let mapPaySystem = new Map();
 var arrayPlace = new Array();
 var setSystem = new Set(); 
 var sortMapPaySystem = new Map();
+var ctx = document.getElementById("myChart").getContext('2d');
+
+var paySystemChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: [{
+            label: ' - процент использования системы',
+            data: [ ],
+            backgroundColor: [     ],
+            borderColor: [  ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+    });
 function main()
 {
     projectTable();
-
-    prize()
- /*   for(i in arrayPlace)
-        console.log(arrayPlace[i]);
-    for(item of mapPaySystem);
-        console.log(item[0],item[1])*/
+    prize();
     createTable();
 }
 
@@ -78,7 +97,7 @@ function createTable()
     
     for(item of sortMapPaySystem)
     {
-        if (sortMapPaySystem.get(item[0])==arrayPlace[n-1])
+        if (item[1]==arrayPlace[n-1])
         {
             if(isFirst){isFirst=false;}
             else
@@ -92,7 +111,31 @@ function createTable()
             $(".tablePayment").append('<tr><td>'+n+'</td><td id="value">'+ item[0]+'</td></tr>');
 
         }
-        
+        addData(paySystemChart, item[0], item[1]);
+        paySystemChart.update();
+        paySystemChart.canvas.parentNode.style.height = '128px';
+        paySystemChart.canvas.parentNode.style = '128px';
+        beforePrintHandler(paySystemChart);
     }
 }
 
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+}
+
+function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    var color = random_rgba();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+        dataset.backgroundColor.push(color);
+        dataset.borderColor.push(color);
+    });  
+}
+
+function beforePrintHandler (chart) {
+    for (var id in chart.instances) {
+        chart.instances[id].resize()
+    }
+  }
