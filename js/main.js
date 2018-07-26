@@ -72,19 +72,18 @@ function prize() //array объявить внутри, set удалить
 
 function createTable()
 {
-    var i = 0;
+    var isFirst = true;
     var n=1;
     $(".tablePayment").append('<tr><td>'+n+'</td><td id="value"></td></tr>');
     
     for(item of sortMapPaySystem)
     {
-
-        console.log(item[0],sortMapPaySystem.get(item[0]),arrayPlace[n-1])
         if (sortMapPaySystem.get(item[0])==arrayPlace[n-1])
         {
-            // тут должна быть какая-то проверка
-            console.log(item[0],arrayPlace[n-1],sortMapPaySystem.get(item[0])==arrayPlace[n-1])
-            $("#value").append("<br>"+ item[0]);
+            if(isFirst){isFirst=false;}
+            else
+                $("#value").append("<br>");
+            $("#value").append(item[0]);
         }
         else
         {

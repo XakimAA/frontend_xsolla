@@ -130,3 +130,92 @@ margin-right: 30%;
 .listProject li:hover {border-left: 10px solid transparent;}
 .listProject li:nth-child(even):hover {border-right: 10px solid #f05d22;}
 .listProject li:nth-child(odd):hover {border-right: 10px solid #8bc63e;}
+
+/*стиль для таблицы с рейтингом*/
+
+table {
+    font-size: 20px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+
+    
+    margin: auto;
+
+    box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+     -2px -2px 5px 0 rgba(0,0,0,.1),
+    2px 2px 5px 0 rgba(0,0,0,.1),
+    -2px 2px 5px 0 rgba(0,0,0,.1);
+}
+th, td:first-child {
+    background: #8bc63e;;
+    color: white;
+
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+    padding: 10px 20px;
+}
+td {
+    background:#fcba30;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+
+/*стиль для гистограммы*/
+
+#graph.graph{
+    border: 1px dashed #77FF5C;
+    padding: 5px;
+  }
+  #graph .item{
+    margin: 2px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    padding: 3px;
+    border-radius: 3px;  
+    background-color: #00508C;
+    box-shadow: 0 0 1px #2280AC;
+  }
+  #graph .item:hover{
+    background-color: #2280AC;  
+    box-shadow: 0 0 2px #2280AC;
+  }
+     
+  #graph.horizontal{
+    width: 200px;
+  }
+  #graph.horizontal .item{
+    height: 20px;
+    text-align: right;
+  }
+  #graph.vertical{
+   height: 120px;
+   width: 200px; 
+   padding-bottom: 10px;
+  }
+  #graph.vertical .item{
+    width: 20px;  
+    float: left;
+    display: inline-block;
+  }
