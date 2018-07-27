@@ -24,7 +24,9 @@ var paySystemChart = new Chart(ctx, {
                     beginAtZero:true
                 }
             }]
-        }
+        },
+        responsive: false
+        
     }
     });
 function main()
