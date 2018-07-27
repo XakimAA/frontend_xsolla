@@ -28,23 +28,66 @@
     </ol>
     <h1>Задание 2</h1>
     <h2>Фильтрация таблицы по введенным данным (по проектам или пользователям)</h2>
+    <table class="filter-table" id="filter-table">
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Отчество</th>
+            </tr>
+            <tr class='table-filters'>
+                <td>
+                    <input type="text"/>
+                </td>
+                <td>
+                    <input type="text"/>
+                </td>
+                <td>
+                    <input type="text"/>
+                </td>
+            </tr>
+            <tr class='table-data'>
+                    <td>Иван</td>
+                    <td>Петров</td>
+                    <td>Викторович</td>
+                </tr>
+                <tr class='table-data'>
+                    <td>Василий</td>
+                    <td>Иванов</td>
+                    <td>Александрович</td>
+                </tr>
+                <tr class='table-data'>
+                    <td>Иван</td>
+                    <td>Иванов</td>
+                    <td>Викторович</td>
+                </tr>
+                <tr class='table-data'>
+                    <td>Петр</td>
+                    <td>Gef</td>
+                    <td>Александрович</td>
+                </tr>
+                <tr class='table-data'>
+                    <td>Александр</td>
+                    <td>Петров</td>
+                    <td>Викторович</td>
+                </tr>
+    </table>
+    <script>
+            $('.table-filters input').on('input', function () {
+                filterTable($(this).parents('table'));
+            });
+    </script>      
     <h1>Задание 3</h1>
     <h2>Отображение рейтинга популярности платежных систем</h2>
-    <ol class="listPayment" id="idlistPayment">
-        </ol>
-
     <table class="tablePayment">
-        <tr>
-            <th>Место в рейтинге</th>
-            <th>Платежная система</th>
+        <tr >
+            <th >Место в рейтинге</th>
+            <th >Платежная система</th>
         </tr>
     </table>
     <h1>Задание 4</h1>
     <h2>Отображение графика популярности платежных систем</h2>
-    <div style="background-color: red; width: 300px; height: 300px;">
-            <canvas id="myChart"class="chartjs" style="display: block; height:500px;margin: auto;" ></canvas>
-    </div>
-    
+    <canvas id="myChart"class="chartjs" style="display: block; height:500px;margin: auto;" ></canvas>
+
     <script src="js/main.js"> </script>
 
 </body>
