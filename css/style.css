@@ -32,6 +32,10 @@ body {
     float:left;
 }
 
+pusto {
+    margin: 1px;
+}
+
 a {
     color: #384434;
 }
@@ -55,7 +59,7 @@ header{
     width: 98%;
     float: left;
     padding:1%;
-    background-color: #fafafa;
+    background-color: #fbdfee;
     border-bottom: 2px solid silver;
 }
 
@@ -66,7 +70,7 @@ header #logo{
     color: #939393;
 }
 header #logo span{
-    color: #ee3366;
+    color: #f47a6f;
 }
 header #menuHead{
     width: 24%;
@@ -125,11 +129,11 @@ margin-left: 30%;
 margin-right: 30%;
 
 }
-.listProject li:nth-child(even){border-color: #8bc63e;}
-.listProject li:nth-child(odd){border-color: #fcba30;}
+.listProject li:nth-child(even){border-color: #eed6e6;}
+.listProject li:nth-child(odd){border-color: #d4f1ec;}
 .listProject li:hover {border-left: 10px solid transparent;}
-.listProject li:nth-child(even):hover {border-right: 10px solid #f05d22;}
-.listProject li:nth-child(odd):hover {border-right: 10px solid #8bc63e;}
+.listProject li:nth-child(even):hover {border-right: 10px solid #d4f1ec;}
+.listProject li:nth-child(odd):hover {border-right: 10px solid #eed6e6;}
 
 /*стиль для таблицы с рейтингом*/
 
@@ -148,8 +152,8 @@ table {
     -2px 2px 5px 0 rgba(0,0,0,.1);
 }
 .tablePayment  th, td:first-child {
-    background: #8bc63e;
-    color: white;
+    background: #eed6e6;
+    color: #333;
 }
 .tablePayment  th, td {
     border-style: solid;
@@ -158,7 +162,7 @@ table {
     padding: 10px 20px;
 }
 .tablePayment td {
-    background:#fcba30;
+    background:#d4f1ec;
 }
 
 th:first-child {
@@ -182,6 +186,6 @@ tr:last-child td:last-child {
 }
 
 .filter-table th, td {
-    background: #8bc63e;
-    color: white;
+    background: #eed6e6;
+    color: 333;
 }

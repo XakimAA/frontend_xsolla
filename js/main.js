@@ -34,6 +34,19 @@ function main()
     projectTable();
     prize();
     createTable();
+    createFilterTable();
+}
+
+function createFilterTable()
+{
+    for (var i = 0; i < data.length; i++)
+    {
+        $(".filter-table").append('<tr class="table-data"><td>'+
+        data[i].transaction.project.name+'</td><td>'+
+        data[i].transaction.payment_method.name +'</td><td>'+
+        data[i].user.id+  '</tr>');
+
+    }
 }
 
 function filterTable($table) {
@@ -57,7 +70,6 @@ function filterTable($table) {
     });
 }
 
-  
 function projectTable()
 {
    
@@ -75,8 +87,6 @@ function projectTable()
             n++;
         }
     }
-   // var str = $("#Text");
-	//str.html(setOfProject);
 
     for(item of setOfProject)    {
         $(".listProject").append("<li>" +item+ "</li>");

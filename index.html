@@ -12,7 +12,7 @@
     
 </head>
 <body onload="main()">
-    <header>
+    <header class="floating">
         <div id="logo">
           <span>F</span>rontend-разработка
         </div>
@@ -21,74 +21,60 @@
             Хакимуллина  Анжелика
         </div>
     </header>
+    <script>
+    $(function(){
+    $(window).scroll(function() {
+        var top = $(document).scrollTop();
+        if (top < 100) $(".floating").css({top: '0', position: 'relative'});
+        else $(".floating").css({top: '0px', position: 'fixed'});
+    });
+    });
+    </script>
     <div class="clear"></div>
+    <pusto><p></p></pusto>
     <h1>Задание 1</h1>
     <h2>Список всех проектов, по которым совершались платежи</h2>
     <ol class="listProject" id="idListProject">
     </ol>
+    <pusto><p></p></pusto>
     <h1>Задание 2</h1>
-    <h2>Фильтрация таблицы по введенным данным (по проектам или пользователям)</h2>
-    <table class="filter-table" id="filter-table">
-            <tr>
-                <th>Имя</th>
-                <th>Фамилия</th>
-                <th>Отчество</th>
-            </tr>
-            <tr class='table-filters'>
-                <td>
-                    <input type="text"/>
-                </td>
-                <td>
-                    <input type="text"/>
-                </td>
-                <td>
-                    <input type="text"/>
-                </td>
-            </tr>
-            <tr class='table-data'>
-                    <td>Иван</td>
-                    <td>Петров</td>
-                    <td>Викторович</td>
-                </tr>
-                <tr class='table-data'>
-                    <td>Василий</td>
-                    <td>Иванов</td>
-                    <td>Александрович</td>
-                </tr>
-                <tr class='table-data'>
-                    <td>Иван</td>
-                    <td>Иванов</td>
-                    <td>Викторович</td>
-                </tr>
-                <tr class='table-data'>
-                    <td>Петр</td>
-                    <td>Gef</td>
-                    <td>Александрович</td>
-                </tr>
-                <tr class='table-data'>
-                    <td>Александр</td>
-                    <td>Петров</td>
-                    <td>Викторович</td>
-                </tr>
+    <h2>Фильтрация таблицы по введенным данным </h2>
+    <table class="filter-table" >
+        <tr>
+            <th>Проект</th>
+            <th>Платежная система</th>
+            <th>Пользователь</th>
+        </tr>
+        <tr class='table-filters'>
+            <td>
+                <input type="text"/>
+            </td>
+            <td>
+                <input type="text"/>
+            </td>
+            <td>
+                <input type="text"/>
+            </td>
+        </tr>
     </table>
-    <script>
+	<script>
             $('.table-filters input').on('input', function () {
                 filterTable($(this).parents('table'));
             });
-    </script>      
+    </script> 
+    <pusto><p></p></pusto>
     <h1>Задание 3</h1>
     <h2>Отображение рейтинга популярности платежных систем</h2>
     <table class="tablePayment">
-        <tr >
+        <tr>
             <th >Место в рейтинге</th>
             <th >Платежная система</th>
         </tr>
     </table>
+    <pusto><p> </p></pusto>
     <h1>Задание 4</h1>
     <h2>Отображение графика популярности платежных систем</h2>
     <canvas id="myChart"class="chartjs" style="display: block; height:500px;margin: auto;" ></canvas>
-
     <script src="js/main.js"> </script>
-
 </body>
 </html>
